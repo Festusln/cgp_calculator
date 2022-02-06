@@ -2,7 +2,7 @@
 #define STRUCT_CGP
 #include<string.h>
 #include<stdio.h>
-struct info
+struct Student_info
 {
     char fname[15];
     char mname [15];
@@ -10,7 +10,11 @@ struct info
      int matric_no;
     char session [44];
     char semester [10];
+};
 
+
+struct Course_info
+{
     char course_code [20];
     char course_tittle [50];
     int course_unit;
@@ -18,4 +22,6 @@ struct info
     char grade;
     int point;
 };
+
+
 #endif
