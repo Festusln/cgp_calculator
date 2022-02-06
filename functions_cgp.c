@@ -3,7 +3,7 @@
 #include "struct_cgp.h"
 
 //Function to get student information
-void get_student_info (struct info *student)
+void get_student_info (struct Student_info *student)
 {
      printf("Enter student matric number: ");
      scanf("%d", &(student->matric_no));
@@ -25,8 +25,9 @@ void get_student_info (struct info *student)
     fgets(student->semester, 10, stdin);
 }
 
+
 //Function to accept scores in course(s)
-void accept_score(struct info *student)
+void accept_score(struct Course_info *student)
 {
     printf("Enter course code: ");
     fgets(student->course_code, 20, stdin);
@@ -45,38 +46,49 @@ void accept_score(struct info *student)
 }
 
 //Function to put scores into grades
-char score_grade_level (struct info *student)
+char score_grade_level (struct Course_info *student)
 {
     if ((student->score)>69)
     student->grade = 'A';
+
     else if ((student->score)>59)
     student->grade  = 'B';
+
     else if ((student->score)>49)
     student->grade  = 'C';
+
     else if ((student->score)>44)
     student->grade  = 'D';
+
     else if ((student->score)>39)
     student->grade  = 'E';
+    
     else
     student->grade  = 'F';
 
 }
 
 //Function to obtain grade points
-int score_point (struct info *student)
+int score_point (struct Course_info *student)
 {
     if ((student->score)>100)
     student->point = 0*(student->course_unit);
-    if ((student->score)>69)
+
+    else if ((student->score)>69)
     student->point = 5*(student->course_unit);
+
     else if ((student->score)>59)
     student->point = 4*(student->course_unit);
+
     else if ((student->score)>49)
     student->point = 3*(student->course_unit);
+
     else if ((student->score)>44)
     student->point = 2*(student->course_unit);
+
     else if ((student->score)>39)
     student->point = 1*(student->course_unit);
+
     else
     student->point = 0*(student->course_unit);
 }
